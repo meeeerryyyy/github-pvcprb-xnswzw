@@ -1,0 +1,68 @@
+---
+import MenuLayout from './MenuLayout.astro'
+import FootLayout from './FootLayout.astro'
+// src/layouts/BaseLayout.astro
+const {title} = Astro.props;
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Lucas" />
+    <meta name="keywords" content="HTML, CSS, Astro" />
+    <title>AI! que arte! - Acerca de...</title>
+    <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/base.css')} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;400;600;900&family=Special+Elite&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <div id="logo">
+          <!-- Aquí irá el logo -->
+          <a href="/home">
+            <img class="logo" src={Astro.resolve('../assets/logo.svg')} />
+          </a>
+        </div>
+        <div id="menu">
+          <!-- Aquí irá el listado de opciones -->
+          <ul>
+            <li>
+              <a href="/about">Acerca de</a>
+            </li>
+            <li>
+              <a href="/blog">Blog</a>
+            </li>
+            <li>
+              <a href="/contact">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> <!-- header -->
+    <!-- ======= Bloque de página ======= -->
+    <div class="main">
+      <slot/>
+    </div>
+    <!-- ======== Pie de página ========= -->
+    <div class="foot">
+      <p>Extraescolares y club deportivo de Esuela Ideo</p>
+      <p>Autor de la página: María Peñalver</p>
+      
+      <div class="links">
+        <ul>
+          <li>
+            <a href="/about">Acerca de</a>
+          </li>
+          <li>
+            <a href="/blog">Blog</a>
+          </li>
+          <li>
+            <a href="/contact">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
